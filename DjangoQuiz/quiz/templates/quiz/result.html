@@ -1,0 +1,23 @@
+{% extends 'home.html' %}
+{% block result %}
+<table border="1">
+    <tr>
+        <th>S.N</th>
+        <th>Question</th>
+        <th>Score</th>
+    </tr>
+    {% for sc in score %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ sc.question }}</td>
+        <td>{{ sc.score }}</td>
+    </tr>
+    {% endfor %}
+        <tr>
+        <td colspan="2"> Total</td>
+        <td>{{ total }}</td>
+        </tr>
+
+</table>
+
+{% endblock %}

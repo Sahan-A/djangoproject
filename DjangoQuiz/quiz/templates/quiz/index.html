@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <title>Title</title>
+</head>
+<body>
+{%  include 'common.html' %}
+<input type="submit" value="test" class="button btn-success">
+    {% for qusn in dcat %}
+      {% for category in qusn %}
+          <a href="play-quiz?category={{ category }}">{{ category }}</a>
+      {% endfor %}
+    {% endfor %}
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+<a href="{% url 'login' %}">Click here to login</a>
+<a href="{% url 'signup' %}">Click here to register</a>
+welcome{{ request.user }}
+
+{%if user.is_authenticated %}
+    {% if user.is_saff  %}
+        <a href="#">Admin menu only</a>
+
+        {% else %}
+        <a href="{%  url 'index' %}">play Quiz</a>
+    {% endif %}
+<a href="{% url 'index' %}">Play Quiz</a>
+<a href="{% url 'logout' %}">logout</a>
+{% endif %}
+
+
